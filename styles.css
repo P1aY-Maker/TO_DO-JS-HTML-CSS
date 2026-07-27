@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Resetting */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+}
+
+button {
+  border: none;
+}
+
+/* Typography */
+body {
+  font-size: 1rem;
+  /* color: var(--color-gray-50--); */
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  font-size: 3.125rem;
+  line-height: 3.75rem;
+}
+h2 {
+  line-height: 3.75rem;
+}
+/* Layout */
+.flex {
+  display: flex;
+}
+.jus-spacebw {
+  justify-content: space-between;
+}
+
+.jus-center {
+  justify-content: center;
+}
+.gap-1 {
+  gap: 1rem;
+}
+.gap-2 {
+  gap: 2rem;
+}
+.todo-container {
+  background-image: url("/Styles/bg-desktop-light.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+
+.text-center {
+  text-align: center;
+}
+.align-center {
+  align-items: center;
+}
+.align-top {
+  align-items: top;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.w-full {
+  width: 100%;
+}
+
+/* Theme */
+
+:root {
+  /* Primary */
+  --color-blue-500--: hsl(220, 98%, 61%);
+  --gradient-check-bg--: linear-gradient(
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+
+  /* Neutral - Light Theme */
+  --color-gray-50--: hsl(0, 0%, 98%);
+  --color-purple-300--: hsl(234, 39%, 85%);
+  --color-gray-300--: hsl(233, 11%, 84%);
+  --color-gray-600--: hsl(236, 9%, 61%);
+  --color-navy-850--: hsl(235, 19%, 35%);
+
+  /* Neutral - Dark Theme */
+  --color-navy-950--: hsl(235, 21%, 11%);
+  --color-navy-900--: hsl(235, 24%, 19%);
+  --color-purple-100-hover--: hsl(236, 33%, 92%);
+  --color-purple-600--: hsl(235, 16%, 43%);
+  --color-purple-700--: hsl(233, 14%, 35%);
+  --color-purple-800--: hsl(237, 14%, 26%);
+}
+
+/* Header section */
+
+#header-section .head-text {
+  color: white;
+  font-size: 60px;
+  font-weight: 600;
+  top: 100px;
+  left: 600px;
+  position: absolute;
+}
+
+#header-section input {
+  width: 700px;
+  padding: 30px;
+  border: none;
+  border-radius: 5px;
+  top: 200px;
+  font-size: 25px;
+  font-weight: 600;
+  padding-left: 100px;
+  left: 600px;
+  position: absolute;
+}
+
+/* Todo container */
+
+.todo-content-container {
+  background-color: var(--color-purple-300--);
+  width: 700px;
+  left: 600px;
+  top: 320px;
+  position: absolute;
+  border-radius: 5px;
+  padding: 30px;
+}
+.todo-things {
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+.cancel-btn {
+  position: absolute;
+  left: 650px;
+}
+.task-info {
+  margin-top: 55px;
+}
+.logo-sun {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  left: 1255px;
+  top: 100px;
+}
