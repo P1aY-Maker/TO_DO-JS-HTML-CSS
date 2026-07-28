@@ -34,17 +34,21 @@ body {
   color: black;
   font-family: "Poppins", sans-serif;
 }
+
 h1 {
   font-size: 3.125rem;
   line-height: 3.75rem;
 }
+
 h2 {
   line-height: 3.75rem;
 }
+
 /* Layout */
 .flex {
   display: flex;
 }
+
 .jus-spacebw {
   justify-content: space-between;
 }
@@ -52,12 +56,15 @@ h2 {
 .jus-center {
   justify-content: center;
 }
+
 .gap-1 {
   gap: 1rem;
 }
+
 .gap-2 {
   gap: 2rem;
 }
+
 .todo-container {
   background-image: url("/Styles/bg-desktop-light.jpg");
   background-size: cover;
@@ -68,18 +75,23 @@ h2 {
 .text-center {
   text-align: center;
 }
+
 .align-center {
   align-items: center;
 }
+
 .align-top {
   align-items: top;
 }
+
 .flex-col {
   flex-direction: column;
 }
+
 .flex-wrap {
   flex-wrap: wrap;
 }
+
 .w-full {
   width: 100%;
 }
@@ -89,10 +101,8 @@ h2 {
 :root {
   /* Primary */
   --color-blue-500--: hsl(220, 98%, 61%);
-  --gradient-check-bg--: linear-gradient(
-    hsl(192, 100%, 67%),
-    hsl(280, 87%, 65%)
-  );
+  --gradient-check-bg--: linear-gradient(hsl(192, 100%, 67%),
+      hsl(280, 87%, 65%));
 
   /* Neutral - Light Theme */
   --color-gray-50--: hsl(0, 0%, 98%);
@@ -116,22 +126,15 @@ h2 {
   color: white;
   font-size: 60px;
   font-weight: 600;
-  top: 100px;
-  left: 600px;
-  position: absolute;
 }
 
 #header-section input {
-  width: 700px;
   padding: 30px;
   border: none;
   border-radius: 5px;
-  top: 200px;
   font-size: 25px;
   font-weight: 600;
   padding-left: 100px;
-  left: 600px;
-  position: absolute;
 }
 
 /* Todo container */
@@ -139,27 +142,55 @@ h2 {
 .todo-content-container {
   background-color: var(--color-purple-300--);
   width: 700px;
-  left: 600px;
-  top: 320px;
   position: absolute;
+  left: 50%;
+  top: 320px;
+  transform: translateX(-50%);
   border-radius: 5px;
   padding: 30px;
 }
+
 .todo-things {
   margin-bottom: 30px;
   font-size: 25px;
 }
+
 .cancel-btn {
   position: absolute;
   left: 650px;
 }
+
 .task-info {
   margin-top: 55px;
 }
+
 .logo-sun {
-  position: absolute;
   height: 50px;
   width: 50px;
-  left: 1255px;
-  top: 100px;
+}
+
+.wrapper {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+}
+
+.task-title {
+  position: relative;
+}
+
+.task-title::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  top: 50%;
+  background-color: #000000;
+  transition: all 700ms ease;
+}
+
+.task-title:hover::before {
+  width: 100%;
 }
