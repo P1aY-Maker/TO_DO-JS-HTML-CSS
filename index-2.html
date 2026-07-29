@@ -24,58 +24,25 @@
     <section id="content-section">
       <div class="todo-content-container">
         <div class="todo-content">
-          <ul class="todo-items">
-            <li class="todo-things flex gap-2 align-center">
-              <!-- Checkbox style -->
-              <div class="checkbox-wrapper-12">
-                <div class="cbx">
-                  <input type="checkbox" id="cbx-12" />
-                  <label for="cbx-12"></label>
-                  <svg fill="none" viewBox="0 0 15 14" height="14" width="15">
-                    <path d="M2 8.36364L6.23077 12L13 2"></path>
-                  </svg>
-                </div>
-
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <filter id="goo-12">
-                      <feGaussianBlur
-                        result="blur"
-                        stdDeviation="4"
-                        in="SourceGraphic"
-                      ></feGaussianBlur>
-                      <feColorMatrix
-                        result="goo-12"
-                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7"
-                        mode="matrix"
-                        in="blur"
-                      ></feColorMatrix>
-                      <feBlend in2="goo-12" in="SourceGraphic"></feBlend>
-                    </filter>
-                  </defs>
-                </svg>
-              </div>
-              <span>Jog</span>
-              <a href="#" class="cancel-btn">X</a>
-            </li>
-          </ul>
+          <ul class="todo-items"></ul>
           <div class="task-info flex jus-spacebw">
             <p>5 tasks left</p>
             <ul class="flex gap-2">
               <li>
-                <a href="#">All tasks</a>
+                <a id="all-task" href="#">All tasks</a>
               </li>
               <li>
-                <a href="#">Active</a>
+                <a id="active-task" href="#">Active</a>
               </li>
               <li>
-                <a href="#">Completed</a>
+                <a id="completed-task" href="#">Completed</a>
               </li>
             </ul>
-            <a href="#">Clear completed</a>
+            <a id="clear-completed" href="#">Clear completed</a>
           </div>
         </div>
       </div>
     </section>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

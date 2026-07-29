@@ -167,7 +167,23 @@ h2 {
   gap: 2rem;
   justify-content: space-between;
 }
-
+.task-title {
+  position: relative;
+}
+.task-title::before {
+  content: "";
+  position: absolute;
+  height: 0.125rem;
+  width: 0%;
+  left: 0;
+  top: 50%;
+  background-color: black;
+  transition: all 500ms ease;
+}
+.completed::before {
+  width: 100%;
+  transition: all 500ms ease;
+}
 /* Checkbox style */
 
 /* From Uiverse.io by Shoh2008 */
