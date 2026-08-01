@@ -8,13 +8,14 @@ const completedTask = document.getElementById("completed-task")
 const clearCompleted = document.getElementById("clear-completed")
 
 function taskTemplate(task, idx) {
+
   return `
       <li class="todo-things flex gap-2 align-center">
               <!-- Checkbox style -->
               <div class="checkbox-wrapper-12">
                 <div class="cbx">
-                  <input data-idx="${idx}" ${task.isCompleted ? `checked` : ""} type="checkbox" id="cbx-12" />
-                  <label for="cbx-12"></label>
+                  <input type="checkbox" data-idx="${idx}" ${task.isCompleted ? `checked` : ""} id="${task.id}" />
+                  <label for="${task.id}"></label>
                   <svg fill="none" viewBox="0 0 15 14" height="14" width="15">
                     <path d="M2 8.36364L6.23077 12L13 2"></path>
                   </svg>
@@ -39,28 +40,26 @@ function taskTemplate(task, idx) {
                   </defs>
                 </svg>
               </div>
-              <span class="task-title ${task.isCompleted ? "completed" : ""}">${task.title
-    }</span>
-              <a data-idx="${idx}" href="#" class="cancel-btn">X</a>
-            </li>
-  `
+              <span class="task-title task-title-${idx} ${task.isCompleted ? "completed" : ""} " > ${task.title}</span >
+    <a data-idx="${idx}" href="#" class="cancel-btn">X</a>
+            </li >
+    `
+
 }
 
-
 function renderTask(container, array, templatefn) {
+
   container.innerHTML = ""
   array.forEach((task, i) => {
     container.innerHTML += taskTemplate(task, i)
-  })
+  });
+
 }
-
-
 
 inputField.addEventListener("keydown", (e) => {
   if (e.keyCode !== 13) {
     return
   }
-
   const task = {
     id: crypto.randomUUID(),
     title: inputField.value,
@@ -71,7 +70,6 @@ inputField.addEventListener("keydown", (e) => {
   renderTask(taskContainer, taskArray, taskTemplate)
   inputField.value = ""
 })
-
 
 taskContainer.addEventListener("click", (e) => {
   if (e.target.tagName === "INPUT") {
@@ -116,10 +114,33 @@ completedTask.addEventListener("click", () => {
 })
 
 clearCompleted.addEventListener("click", () => {
-  taskArray.forEach((task, idx) => {
-    if (task.isCompleted) {
-      taskArray.splice(idx, 1)
+
+  let indexOfCompletedTasks = []
+  let prevCompletedIndex = null
+
+  for (let i = 0; i < taskArray.length; i++) {
+
+    if (taskArray[i].isCompleted) {
+      indexOfCompletedTasks.push(i)
     }
-  })
+
+  }
+
+  for (let i = 0; i < indexOfCompletedTasks.length; i++) {
+    if (taskArray[indexOfCompletedTasks[i]].isCompleted) {
+      taskArray.splice(indexOfCompletedTasks[i], 1)
+      prevCompletedIndex = indexOfCompletedTasks[i]
+    }
+
+    indexOfCompletedTasks = indexOfCompletedTasks.map((j) => {
+      if (j > prevCompletedIndex) {
+        return j - 1
+      }
+      else {
+        return j
+      }
+    })
+  }
+
   renderTask(taskContainer, taskArray, taskTemplate)
 })
